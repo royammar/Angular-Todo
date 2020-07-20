@@ -12,11 +12,11 @@ import { CloudinaryServiceService } from 'src/app/cloudinary-service.service';
   styleUrls: ['./todo-edit.component.scss']
 })
 export class TodoEditComponent implements OnInit {
-  todo:TodoModel
-  constructor( private location: Location,public cloudinaryService:CloudinaryServiceService, public todoService: TodoServiceService,private route: ActivatedRoute) { }
+  todo: TodoModel
+  constructor(private location: Location, public cloudinaryService: CloudinaryServiceService, public todoService: TodoServiceService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    window.scroll(0,0);
+    window.scroll(0, 0);
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id')
       this.todoService.getTodoById(id).subscribe((todo) => {
@@ -26,16 +26,16 @@ export class TodoEditComponent implements OnInit {
   }
 
 
-  handleSave(){
+  handleSave() {
     this.todoService.saveTodo(this.todo)
     this.location.back()
   }
 
-  
-  async handleFileUpload(event){
-    let todoImage= await this.cloudinaryService.uploadImg(event)
-    this.todo.image=todoImage.url
+
+  async handleFileUpload(event) {
+    let todoImage = await this.cloudinaryService.uploadImg(event)
+    this.todo.image = todoImage.url
 
   }
-  
+
 }

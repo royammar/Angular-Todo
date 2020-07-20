@@ -17,20 +17,18 @@ export class TodoServiceService {
 
   constructor() { }
 
-
   public loadTodos(filterBy = null): void {
     let todos = this._todos;
     if (filterBy) {
-      todos = this._filter(filterBy,todos)
+      todos = this._filter(filterBy, todos)
     }
     this._todos$.next(todos)
   }
 
-
   public getTodoById(id: string): Observable<TodoModel> {
     let todo = this._todos.find(todo => todo._id === id)
     todo = { ...todo }
-    return  of(todo) 
+    return of(todo)
   }
 
   public deleteTodo(id: string) {
@@ -67,7 +65,7 @@ export class TodoServiceService {
   }
 
 
-  
+
 
 
   private _sort(arr: TodoModel[]): TodoModel[] {
@@ -85,10 +83,9 @@ export class TodoServiceService {
 
 
 
-  private _filter(filterBy:string, todos:TodoModel[]) {
-    
+  private _filter(filterBy: string, todos: TodoModel[]) {
     return todos.filter(todo => {
-      return todo.txt.toLocaleLowerCase().includes(filterBy) 
+      return todo.txt.toLocaleLowerCase().includes(filterBy)
     })
   }
 

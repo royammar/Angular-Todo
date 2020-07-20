@@ -1,5 +1,5 @@
 
-import { Component, OnInit,EventEmitter,Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -8,17 +8,15 @@ import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
-  filterBy:string=null
+  filterBy: string = null
   @Output() onFilter = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  inputChange(event):void {
-    console.log(event);
-    
-    this.filterBy=event.target.value
+  inputChange(event): void {
+    this.filterBy = event.target.value
     this.onFilter.emit(this.filterBy)
   }
 

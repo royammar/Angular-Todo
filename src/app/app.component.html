@@ -1,15 +1,39 @@
 <app-navbar></app-navbar>
-<div class="container flex-column mb-5 pb-5  flex-grow-1 ">
-    <input type="text" required class="form-control mb-4 col" [(ngModel)]="newTodo.txt" placeholder="Add a new Task">
-    <div class="custom-file mb-4 col">
-        <input type="file" class="custom-file-input" style="cursor: pointer;" id="inputGroupFile01" accept="image/*"
-        (input)="handleFileUpload($event)">
-        <label class="custom-file-label"  for="inputGroupFile01" id="label" >Upload image</label>
-    </div>
-    <button class="btn btn-primary btn-m mb-4 align-content-end" (click)="handleSave()">Add New</button>
-    <button class="btn btn-secondary btn-m mb-4 align-content-end ml-2" (click)="handleSort()">Sort Tasks</button>
-    <app-filter (onFilter)="onFilter($event)"></app-filter>
-    <router-outlet></router-outlet>
-    <app-todo-list [todos]="todos"></app-todo-list>
+<div class="container flex-column mb-5 flex-grow-1">
+  <input
+    type="text"
+    required
+    class="form-control mb-4 col"
+    [(ngModel)]="newTodo.txt"
+    placeholder="Add a new Task"
+  />
+  <div class="custom-file mb-4 col">
+    <input
+      type="file"
+      class="custom-file-input"
+      style="cursor: pointer;"
+      id="inputGroupFile01"
+      accept="image/*"
+      (input)="handleFileUpload($event)"
+    />
+    <label class="custom-file-label" for="inputGroupFile01" id="label"
+      >Upload image</label
+    >
+  </div>
+  <button
+    class="btn btn-primary btn-m mb-4 align-content-end"
+    (click)="handleSave()"
+  >
+    Add New
+  </button>
+  <button
+    class="btn btn-secondary btn-m mb-4 align-content-end ml-2"
+    (click)="handleSort()"
+  >
+    Sort Tasks
+  </button>
+  <app-filter (onFilter)="onFilter($event)"></app-filter>
+  <router-outlet></router-outlet>
+  <app-todo-list [todos]="todos"></app-todo-list>
 </div>
 <app-footer></app-footer>

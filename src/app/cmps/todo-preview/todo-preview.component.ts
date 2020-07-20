@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import TodoModel from 'src/app/models/todo.model';
 import { TodoServiceService } from 'src/app/todo-service.service';
 
- 
+
 
 
 @Component({
@@ -15,10 +15,9 @@ export class TodoPreviewComponent implements OnInit {
   @Input() todo: TodoModel
 
 
-  constructor( public todoService: TodoServiceService) { }
+  constructor(public todoService: TodoServiceService) { }
 
   ngOnInit(): void {
-  
   }
 
   handleToggle() {
