@@ -1,0 +1,19 @@
+<hr>
+<div class="form-group" id="top" >
+    
+    <label class="col-form-label-lg" for="edit">EDIT YOUR TASK</label>
+    <input [(ngModel)]="todo.txt" class="form-control mb-4" id="edit">
+    <div class="custom-file mb-4 ">
+        <input type="file" class="custom-file-input " id="inputGroupFile01" accept="image/*"
+            (input)="handleFileUpload($event)">
+        <label class="custom-file-label" for="inputGroupFile01">{{todo.image|slice:62:100}}</label>
+    </div>
+    <div class="flex-column">
+        <button class="btn btn-success btn-primary mb-2" (click)="handleSave()">SAVE</button>
+        <a class="btn  btn-dark  btn-primary mb-2 ml-3" style="text-decoration: none; color: white;"
+            [routerLink]="['/']">CANCEL</a>
+    </div>
+</div>
+
+<hr>
+

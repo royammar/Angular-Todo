@@ -1,0 +1,32 @@
+<div class="media card flex-row flex-wrap">
+  <div class="col-sm-6 col-md-6 col-lg-4 m-0 p-2">
+    <img
+      src="{{ todo.image }}"
+      alt="{{ todo.txt }}"
+      class="card-img-top img-responsive"
+    />
+  </div>
+  <div
+    class="media-body ml-3 p-3 flex-grow-1 d-flex align-self-stretch flex-column justify-content-between"
+  >
+    <h5
+      [ngStyle]="{ 'text-decoration': todo.isActive ? 'none' : 'line-through' }"
+      class="mb-1"
+      (click)="handleToggle()"
+      style="cursor: pointer;"
+    >
+      {{ todo.txt | uppercase }}
+    </h5>
+    <div class="align-self-end">
+      <button class="btn btn-secondary btn-lg" (click)="handleDelete()">
+        <img style="height: 30px;" src="../assets/delete (2).png" />
+      </button>
+      <a
+        class="btn btn-primary btn-lg m-2"
+        [routerLink]="['/todos/edit', todo._id]"
+      >
+        <img style="height: 30px;" src="../assets/pencil.png"
+      /></a>
+    </div>
+  </div>
+</div>
