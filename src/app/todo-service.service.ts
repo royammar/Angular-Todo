@@ -63,7 +63,6 @@ export class TodoServiceService {
     console.log(newTodo,'new');
     newTodo.setId();
     // (todo.image) ? newTodo.setImage(todo.image) : null
-    
     this._todos.push(newTodo)
     this._todos$.next(this._todos)
   }
