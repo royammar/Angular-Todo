@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
     if (this.newTodo.txt === '') return
     this.todoService.saveTodo(this.newTodo)
     this.newTodo = { txt: "", isActive: true, image: "https://res.cloudinary.com/dxxsrzs8t/image/upload/v1595183130/ihedpoytx6ibzzlngnft.jpg" }
+    document.getElementById("label").innerText = "Upload Image"
 
   }
 
