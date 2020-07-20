@@ -10,15 +10,24 @@ import { CloudinaryServiceService } from './cloudinary-service.service';
 })
 export class AppComponent implements OnInit {
   public todos: TodoModel[] = []
-  public newTodo: TodoModel = { txt: '', isActive: true, image: "https://res.cloudinary.com/dxxsrzs8t/image/upload/v1595183130/ihedpoytx6ibzzlngnft.jpg" }
+  public newTodo: TodoModel = {
+    txt: '',
+    isActive: true,
+    image: "https://res.cloudinary.com/dxxsrzs8t/image/upload/v1595183130/ihedpoytx6ibzzlngnft.jpg"
+  }
   filterBy: string = ''
   constructor(public todoService: TodoServiceService, public cloudinaryService: CloudinaryServiceService) { }
 
 
   handleSave() {
+    
     if (this.newTodo.txt === '') return
     this.todoService.saveTodo(this.newTodo)
-    this.newTodo = { txt: "", isActive: true, image: "https://res.cloudinary.com/dxxsrzs8t/image/upload/v1595183130/ihedpoytx6ibzzlngnft.jpg" }
+    this.newTodo = {
+      txt: "",
+      isActive: true,
+      image: "https://res.cloudinary.com/dxxsrzs8t/image/upload/v1595183130/ihedpoytx6ibzzlngnft.jpg"
+    }
     document.getElementById("label").innerText = "Upload Image"
 
   }

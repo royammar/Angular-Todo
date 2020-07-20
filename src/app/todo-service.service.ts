@@ -37,6 +37,7 @@ export class TodoServiceService {
   }
 
   public saveTodo(todo: TodoModel) {
+
     return todo._id ? this._updateTodo(todo) : this._addTodo(todo)
   }
   public toggleTodo(todo: TodoModel) {
@@ -57,9 +58,12 @@ export class TodoServiceService {
   }
 
   private _addTodo(todo: TodoModel) {
-    const newTodo = new TodoModel(todo.txt);
+   
+    const newTodo = new TodoModel(todo.txt,todo.image);
+    console.log(newTodo,'new');
     newTodo.setId();
-    (todo.image) ? newTodo.setImage(todo.image) : null
+    // (todo.image) ? newTodo.setImage(todo.image) : null
+    
     this._todos.push(newTodo)
     this._todos$.next(this._todos)
   }
