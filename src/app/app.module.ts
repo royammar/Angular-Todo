@@ -10,7 +10,8 @@ import { TodoEditComponent } from './cmps/todo-edit/todo-edit.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {SortablejsModule} from 'ngx-sortablejs';
 import { FooterComponent } from './footer/footer.component';
-import { FilterComponent } from './cmps/filter/filter.component'
+import { FilterComponent } from './cmps/filter/filter.component';
+import { FilterActivePipe } from './filter-active.pipe'
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FilterComponent } from './cmps/filter/filter.component'
     NavbarComponent,
     FooterComponent,
     FilterComponent,
+    FilterActivePipe,
    
   ],
   imports: [

@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [todos]="todos" ></app-navbar>
 <div class="container flex-column mb-5 flex-grow-1">
   <input
     type="text"
@@ -36,4 +36,4 @@
   <router-outlet></router-outlet>
   <app-todo-list [todos]="todos"></app-todo-list>
 </div>
-<app-footer></app-footer>
+<app-footer ></app-footer>

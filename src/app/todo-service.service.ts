@@ -60,7 +60,6 @@ export class TodoServiceService {
   private _addTodo(todo: TodoModel) {
    
     const newTodo = new TodoModel(todo.txt,todo.image);
-    console.log(newTodo,'new');
     newTodo.setId();
     // (todo.image) ? newTodo.setImage(todo.image) : null
     this._todos.push(newTodo)

@@ -1,4 +1,9 @@
-<nav class="main-navbar">
+<nav class="main-navbar d-flex justify-content-between align-items-center">
   <a class="navbar-brand">MY TASKS</a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent "></div>
+  <div class="d-flex justify-content-between align-items-center">
+  <label for="status" class="mb-0">Tasks : </label>
+  <div class="status" id="status"> {{todos.length}}</div>
+  <label for="status" class="mb-0 ml-3" >Active : </label>
+  <div class="status" id="status"> {{todos|filterActive}}</div>
+</div>
 </nav>
